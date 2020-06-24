@@ -12,7 +12,7 @@ deploy:
     branch: master
     tags: false
 after_success:
-  - s./mvnw clean test cobertura:cobertura coveralls:report
+  - ./mvnw clean test jacoco:report coveralls:report -DrepoToken=${env.COVERALLS_TOKEN}
 
 env:
   global:

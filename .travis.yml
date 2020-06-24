@@ -12,7 +12,7 @@ deploy:
     branch: master
     tags: false
 after_success:
-  - "./mvnw clean test cobertura:cobertura coveralls:report"
+  - s./mvnw clean test cobertura:cobertura coveralls:report
 
 env:
   global:

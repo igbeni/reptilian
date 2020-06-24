@@ -5,7 +5,7 @@ notifications:
   email: false
 script:
 - "./mvnw clean compile package install"
-  
+
 #deploy:
 #  provider: script
 #  script: mvn deploy --settings deploy/maven-settings.xml

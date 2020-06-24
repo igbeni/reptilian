@@ -1,14 +1,14 @@
 package com.github.igbeni.reptilian;
 
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserTest {
+public class UserTest {
 
     @Test
-    void dummy() {
+    public void dummy() {
         assertTrue(new User().dummy());
     }
 }

@@ -5,12 +5,14 @@ notifications:
   email: false
 script:
 - "./mvnw clean compile package install"
-deploy:
-  provider: script
-  script: mvn deploy --settings deploy/maven-settings.xml
-  on:
-    branch: master
-    tags: false
+  
+#deploy:
+#  provider: script
+#  script: mvn deploy --settings deploy/maven-settings.xml
+#  on:
+#    branch: master
+#    tags: false
+
 after_success:
   - ./mvnw clean test jacoco:report coveralls:report
 

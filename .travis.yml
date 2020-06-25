@@ -9,9 +9,14 @@ notifications:
 sudo: false
 
 script:
-  - mvn package
+  - "./mvnw clean compile package install"
 
-install: true
+deploy:
+  provider: script
+  script: mvn deploy --settings deploy/maven-settings.xml
+  on:
+    branch: master
+    tags: true
 
 env:
   global:
@@ -22,12 +27,6 @@ env:
 
 after_success:
   - semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release --use-conveyal-workflow --dev-branch=dev
-
-before_install: |
-  if [[ "$TRAVIS_PULL_REQUEST" = false ]] && [[ "$TRAVIS_BRANCH" = master ]]; then
-    openssl aes-256-cbc -K $encrypted_319571283a54_key -iv $encrypted_319571283a54_iv -in deploy/codesigning.asc.enc  -out deploy/codesigning.asc -d
-    gpg --import --batch deploy/codesigning.asc
-  fi
 
 before_script:
   - yarn global add https://github.com/conveyal/maven-semantic-release.git#e5551beb4ec266bb520ae5ff155bc0d04acf8f05 semantic-release@15

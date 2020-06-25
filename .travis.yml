@@ -26,7 +26,7 @@ env:
     - secure: TUnohSmHj9zcPGL5pauELfc8xiukdNr4zlw8QYBtMGtjlmqHhpWBQz6z0MvfImds1Cz42QRO2CLiPCdNAIgknVHan02K5Lum917r/cQ/mezvo/Y9G1w8/3Cp9jYkhcbfI2aUe/wTv1ah2KUJEHMnGlAC3ttyzTKjfWKKhHwq9sKOc/+CUV/mF/tAkpLGKWyd+KBobOTSxxyHL3Ti9qf+qCTwDeciraoAkdnkDN7xjyafzARt/VYOyHeOUA5+sBzuOcNjfIUxd+ArC43mRxj+doN9C4kLaoumfrKa+xgmn1umK7Fvx3tK538QSFJL++J2wyrjmA7UVB2CwLChfZQH76NXNAm9DjuytBJ2QDVMq8A/73b4HMh/fkXOLYnkzje5ya9GJfF7OibfC2N5qD4GitwdmrnJS3/DsZ4BP7vRQqpWUKHuXOkp5rGWI/+yoTm/QHTGOmxGsTe+GjkeaSmgr1AjijpqJFo1EMdX3uPiGNiPaEbatCsm2gSO2vkDMulLQqoMi5a5j29c68OjbbYAC9YZrXOkBCMM5Jq1VeGWleV6stzkDDRSKwLkzbww+RW/NJJU+NhnGmwiN0danw090qXReBjYPFOQg1NP6+oJK5JHCfDP3GI6IIwGfrucOIqUhBMnNBMfzT7tvjMp4z/ZELBc8brgr6gl7ZehqzpOar0=
 
 after_success:
-  - semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release --use-conveyal-workflow --dev-branch=dev
+  - semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release --use-conveyal-workflow
 
 before_script:
   - npm install -g n

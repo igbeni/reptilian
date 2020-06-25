@@ -9,14 +9,9 @@ notifications:
 sudo: false
 
 script:
-  - "./mvnw clean compile package install"
+  - mvn package
 
-deploy:
-  provider: script
-  script: mvn deploy --settings deploy/maven-settings.xml
-  on:
-    branch: master
-    tags: true
+install: true
 
 env:
   global:

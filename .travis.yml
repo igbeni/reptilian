@@ -25,7 +25,7 @@ after_success:
 
 before_install: |
   if [[ "$TRAVIS_PULL_REQUEST" = false ]] && [[ "$TRAVIS_BRANCH" = master ]]; then
-    openssl aes-256-cbc -K $encrypted_319571283a54_key -iv $encrypted_319571283a54_iv -in maven-artifact-signing-key.asc.enc -out maven-artifact-signing-key.asc -d
+    openssl aes-256-cbc -K $encrypted_319571283a54_key -iv $encrypted_319571283a54_iv -in deploy/codesigning.asc.enc  -out deploy/codesigning.asc -d
     gpg --import --batch maven-artifact-signing-key.asc
   fi
 

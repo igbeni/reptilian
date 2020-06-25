@@ -16,7 +16,7 @@ deploy:
   script: mvn deploy --settings maven-settings.xml
   on:
     branch: master
-    tags: true
+    tags: false
 
 env:
   global:
